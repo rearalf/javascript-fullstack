@@ -4,12 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Save Book</title>
+    <title>Salve Book</title>
     <meta name="description" content="Guarda tus libros. Hecho por Ricardo Alf(rearAlf.">
 </head>
 
 <body>
-    <h1>Hello</h1>
+    <header class="navbar mb-2">
+        <nav class="container navbar-expand">
+            <a href="/" class="navbar-brand">
+                Salve Book
+            </a>
+            <div class="collapse">
+                <ul class="navbar-nav">
+                    <il class="nav-item">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </il>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <form id="book-form" class="form">
+            <h2>Agregar lirbo</h2>
+            <div class="mb-1">
+                <input type="text" id="title" class="form-control" placeholder="Book Title" autofocus />
+            </div>
+            <div class="mb-1">
+                <input type="text" id="author" class="form-control" placeholder="Author" />
+            </div>
+            <div class="mb-1">
+                <input type="text" id="isbn" class="form-control" placeholder="ISBN" />
+            </div>
+            <div class="mb-1">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="image" placeholder="Seleccione una imagen"
+                        required />
+                </div>
+            </div>
+            <button class="btn">
+                Save Book
+            </button>
+        </form>
+        <div class="list-card">
+
+            <div class="card mb-2">
+                <div class="card-content-img">
+                    <img src="https://s3.amazonaws.com/virginia.webrand.com/virginia/344/LEqKdMKtOj8/c9e74d28a1a2e698f62446b8e5345254.jpg?1590394814"
+                        class="card-img" alt="imagen">
+                    <span class="card-time">1 month ago</span>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Title: El mejor libro</h4>
+                    <p class="card-author">Autor: Anonimo</p>
+                    <p class="card-plot">Trama: Muy buena trama</p>
+                    <p class="card-opinion">Opinión: Muy buena trama, casi lloro</p>
+                    <button class="btn">X</button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
 </body>
 
 </html>

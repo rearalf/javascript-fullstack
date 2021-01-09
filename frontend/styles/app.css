@@ -1,0 +1,212 @@
+:root {
+	--color-text-primary: #24292e;
+	--color-text-secondary: #586069;
+	--color-text-tertiary: #6a737d;
+	--color-text-placeholder: #6a737d;
+	--color-text-disabled: #6a737d;
+	--color-text-white: #fff;
+	--color-text-link: #0366d6;
+	--color-text-danger: #bd2c00;
+	--color-text-danger: #bd2c00;
+
+	--color-bg-primary: #fff;
+	--color-bg-secondary: #fafbfc;
+	--color-bg-tertiary: #f6f8fa;
+	--color-bg-info: #f1f8ff;
+	--color-bg-tertiary: #f6f8fa;
+
+	--color-header-bg: #24292e;
+	--color-header-text: #ffffff;
+
+	--color-shadow-small: 0 1px 0 rgba(27, 31, 35, 0.04);
+	--color-shadow-medium: 0 3px 6px rgba(149, 157, 165, 0.15);
+	--color-shadow-large: 0 8px 24px rgba(149, 157, 165, 0.2);
+	--color-shadow-extra-large: 0 12px 48px rgba(149, 157, 165, 0.3);
+	--color-shadow-highlight: inset 0 1px 0 hsla(0, 0%, 100%, 0.25);
+	--color-shadow-inset: inset 0 1px 0 rgba(225, 228, 232, 0.2);
+
+	--color-border-primary: #e1e4e8;
+	--color-btn-text: #24292e;
+	--color-btn-bg: #fafbfc;
+	--color-btn-bg-danger: #bd2c00;
+	--color-btn-border: rgba(27, 31, 35, 0.15);
+	--color-btn-shadow: 0 1px 0 rgba(27, 31, 35, 0.04);
+	--color-btn-hover-bg: #f3f4f6;
+	--color-btn-hover-border: rgba(27, 31, 35, 0.15);
+	--color-btn-selected-bg: #edeff2;
+	--color-btn-focus-bg: #fafbfc;
+	--color-btn-focus-border: rgba(27, 31, 35, 0.15);
+	--color-btn-focus-shadow: 0 0 0 3px rgba(3, 102, 214, 0.3);
+	--color-btn-shadow-active: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
+	--color-btn-shadow-input-focus: 0 0 0 0.2em rgba(3, 102, 214, 0.3);
+
+	--border-radius: .5rem;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+a {
+	color: inherit;
+}
+
+body {
+	margin: 0;
+	background-color: var(--color-bg-primary);
+	color: var(--color-text-primary);
+}
+
+.container {
+	margin: 0 auto;
+	width: 85%;
+}
+
+.mb-1 {
+	margin-bottom: 1rem;
+}
+
+.mb-2 {
+	margin-bottom: 2rem;
+}
+
+.btn {
+	padding: .5rem;
+	margin-bottom: .5rem;
+	border-radius: var(--border-radius);
+	border: none;
+	cursor: pointer;
+}
+
+.navbar {
+	width: 100%;
+	background-color: var(--color-header-bg);
+	color: var(--color-header-text);
+	box-shadow: 0 0 15px 0 var(--background-second);
+}
+.navbar a {
+	text-decoration: none;
+}
+
+.navbar-expand {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navbar-brand {
+	font-size: 1.5em;
+}
+
+.navbar-nav {
+	font-size: 1.2em;
+}
+
+main.container {
+	display: grid;
+	grid-gap: 16px;
+	align-items: start;
+	grid-template-areas: "form" "cards";
+}
+
+.form {
+	grid-area: form;
+}
+
+.card {
+	grid-area: cards;
+	position: relative;
+}
+
+@media screen and (min-width: 772px) {
+	main.container {
+		grid-template-areas: "cards form";
+	}
+}
+
+.form,
+.card {
+	background-color: var(--color-bg-info);
+	display: flex;
+	border-radius: var(--border-radius);
+	box-shadow: var(--color-shadow-medium);
+}
+
+.card-content-img {
+	position: relative;
+	width: 175px;
+}
+
+.card-img {
+	border-top-left-radius: var(--border-radius);
+	border-bottom-left-radius: var(--border-radius);
+	height: 100%;
+	width: 100%;
+}
+
+.card-time {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 10px 0;
+	background-color: var(--color-text-primary);
+	color: var(--color-header-text);
+	opacity: .8;
+}
+
+.card-body {
+	margin-left: 1rem;
+}
+
+.card .btn {
+	border-radius: .2rem;
+	background-color: var(--color-btn-bg-danger);
+	color: var(--color-text-white);
+	position: absolute;
+	bottom: 5px;
+	right: 15px;
+}
+
+.card .btn:hover {
+	opacity: .8;
+}
+
+.form {
+	flex-direction: column;
+	padding: 1rem 1.5rem;
+}
+
+.form .btn {
+	border: 1px solid var(--color-btn-border);
+	background-color: var(--color-btn-bg);
+	color: var(--color-text-link);
+}
+
+.form .btn:hover {
+	background-color: var(--color-btn-hover-bg);
+}
+
+input {
+	width: 100%;
+	border: 1px solid var(--color-btn-border);
+	padding: .5rem 1rem;
+	border-radius: var(--border-radius);
+	color: var(--color-text-primary);
+}
+
+input:focus {
+	box-shadow: var(--color-shadow-medium);
+	outline: .5px solid var(--color-btn-border);
+}
+
+input[type="file"] {
+	background-color: var(--color-btn-bg);
+}
+
+.custom-file input[type="file"] {
+	cursor: pointer;
+}
