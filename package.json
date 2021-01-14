@@ -4,8 +4,10 @@
 	"description": "App para guardar libros",
 	"main": "index.js",
 	"scripts": {
-		"build": "webpack",
-		"server:dev": "webpack serve --mode=development"
+		"build:prod": "webpack --mode=production",
+		"build:dev": "webpack --mode=development",
+		"server:dev": "webpack serve --mode=development",
+		"dev": "cross-env NODE_ENV=development nodemon backend/index.js --ignore frontend"
 	},
 	"repository": {
 		"type": "git",
@@ -30,5 +32,13 @@
 		"webpack": "^5.11.1",
 		"webpack-cli": "^4.3.1",
 		"webpack-dev-server": "^3.11.1"
+	},
+	"dependencies": {
+		"cors": "^2.8.5",
+		"cross-env": "^7.0.3",
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
+		"mongoose": "^5.11.11",
+		"morgan": "^1.10.0"
 	}
 }

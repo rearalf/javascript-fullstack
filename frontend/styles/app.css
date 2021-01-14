@@ -190,23 +190,21 @@ main.container {
 	background-color: var(--color-btn-hover-bg);
 }
 
-input {
+.form-control {
 	width: 100%;
 	border: 1px solid var(--color-btn-border);
 	padding: .5rem 1rem;
 	border-radius: var(--border-radius);
 	color: var(--color-text-primary);
+	outline: none;
 }
 
-input:focus {
+.form-control:focus {
 	box-shadow: var(--color-shadow-medium);
-	outline: .5px solid var(--color-btn-border);
-}
-
-input[type="file"] {
-	background-color: var(--color-btn-bg);
-}
+	border-color: var(--color-text-link);
+}	
 
 .custom-file input[type="file"] {
+	background-color: var(--color-btn-bg);
 	cursor: pointer;
 }

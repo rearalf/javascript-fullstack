@@ -24,28 +24,31 @@
         </nav>
     </header>
     <main class="container">
+
         <form id="book-form" class="form">
             <h2>Agregar lirbo</h2>
             <div class="mb-1">
                 <input type="text" id="title" class="form-control" placeholder="Book Title" autofocus />
             </div>
             <div class="mb-1">
-                <input type="text" id="author" class="form-control" placeholder="Author" />
+                <input type="text" id="author" class="form-control" placeholder="Author" required />
             </div>
             <div class="mb-1">
-                <input type="text" id="isbn" class="form-control" placeholder="ISBN" />
+                <textarea name="view" id="view" cols="5" rows="5" class="form-control" placeholder="View"
+                    required></textarea>
             </div>
             <div class="mb-1">
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="image" placeholder="Seleccione una imagen"
-                        required />
+                    <input type="file" class="custom-file-input form-control" id="image"
+                        placeholder="Seleccione una imagen" />
                 </div>
             </div>
             <button class="btn">
                 Save Book
             </button>
         </form>
-        <div class="list-card">
+
+        <div class="list-card" id="ListBooks">
 
             <div class="card mb-2">
                 <div class="card-content-img">
