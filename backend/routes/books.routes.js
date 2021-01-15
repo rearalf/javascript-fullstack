@@ -24,7 +24,7 @@ router.delete('/', async (req, res) => {
 	const { id } = req.body;
 	Books.findOneAndDelete({ _id: id }, (err, docs) => {
 		if (err) {
-			res.status(401).json({ message: 'Deleted error', success: false });
+			res.status(401).json({ message: 'Deleted error', success: false, err });
 		}
 		else {
 			res.status(200).json({ message: 'Deleted successfully', success: true, docs });
@@ -36,7 +36,7 @@ router.put('/', async (req, res) => {
 	const { id } = req.body;
 	Books.findByIdAndUpdate({ _id: id }, (err, docs) => {
 		if (err) {
-			res.status(401).json({ message: 'Update error', success: false });
+			res.status(401).json({ message: 'Update error', success: false, err });
 		}
 		else {
 			res.status(200).json({ message: 'Update successful', success: true, docs });
