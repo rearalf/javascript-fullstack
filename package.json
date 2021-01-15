@@ -7,7 +7,9 @@
 		"build:prod": "webpack --mode=production",
 		"build:dev": "webpack --mode=development",
 		"server:dev": "webpack serve --mode=development",
-		"dev": "cross-env NODE_ENV=development nodemon backend/index.js --ignore frontend"
+		"dev": "cross-env NODE_ENV=development nodemon backend/index.js --ignore frontend",
+		"postinstall": "npm run build:prod",
+		"start": "cross-env NODE_ENV=production node backend/index.js"
 	},
 	"repository": {
 		"type": "git",

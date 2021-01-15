@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
+const URI = process.env.MONGODB_URI ? process.env.MONGODB_URI : 'mongodb://localhost/salve-books';
+
 mongoose
-	.connect(process.env.MONGODB_URI, {
+	.connect(URI, {
 		useUnifiedTopology: true,
 		useNewUrlParser: true,
 	})
