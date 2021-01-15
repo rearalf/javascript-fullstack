@@ -141,7 +141,6 @@ main.container {
 
 .card-img {
 	border-top-left-radius: var(--border-radius);
-	border-bottom-left-radius: var(--border-radius);
 	height: 100%;
 	width: 100%;
 }
@@ -154,6 +153,7 @@ main.container {
 	justify-content: center;
 	padding: 10px 0;
 	background-color: var(--color-text-primary);
+	border-bottom-left-radius: var(--border-radius);
 	color: var(--color-header-text);
 	opacity: .8;
 }
@@ -202,7 +202,14 @@ main.container {
 .form-control:focus {
 	box-shadow: var(--color-shadow-medium);
 	border-color: var(--color-text-link);
-}	
+}
+
+.form .imgForm {
+	width: 125px;
+	height: 175px;
+	margin: 0 30% 1em;
+	border-radius: var(--border-radius);
+}
 
 .custom-file input[type="file"] {
 	background-color: var(--color-btn-bg);
