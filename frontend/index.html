@@ -25,22 +25,22 @@
     </header>
     <main class="container">
 
-        <form id="bookForm" class="form">
+        <form id="bookForm" class="form" enctype="multipart/form-data">
             <h2>Agregar lirbo</h2>
             <div class="mb-1">
-                <input type="text" id="title" class="form-control" placeholder="Book Title" autofocus />
+                <input type="text" id="title" name="title" class="form-control" placeholder="Book Title" autofocus />
             </div>
             <div class="mb-1">
-                <input type="text" id="author" class="form-control" placeholder="Author" required />
+                <input type="text" id="author" name="author" class="form-control" placeholder="Author" required />
             </div>
             <div class="mb-1">
-                <textarea name="view" id="view" cols="5" rows="5" class="form-control" placeholder="View"
+                <textarea name="view" id="view" name="view" cols="5" rows="5" class="form-control" placeholder="View"
                     required></textarea>
             </div>
             <div class="mb-1">
                 <img src="https://placehold.co/125x175" class="imgForm" alt="imagen" id="imgForm">
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input form-control" id="inputImgForm"
+                    <input type="file" class="custom-file-input form-control" id="inputImgForm" name="inputImgForm"
                         placeholder="Seleccione una imagen" />
                 </div>
             </div>

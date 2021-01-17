@@ -32,8 +32,8 @@ class UI {
 		this.renderBooks();
 	}
 
-	async addNewBook({ title, author, view, cover }) {
-		const data = await bookServices.addNewBook({ title, author, view, cover });
+	async addNewBook(book) {
+		const data = await bookServices.addNewBook(book);
 		console.log(data);
 		this.clearBookForm();
 		this.renderBooks();
@@ -41,6 +41,7 @@ class UI {
 
 	clearBookForm() {
 		document.getElementById('bookForm').reset();
+		document.getElementById('imgForm').src = 'https://placehold.co/125x175';
 	}
 }
 

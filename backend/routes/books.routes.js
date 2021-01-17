@@ -10,6 +10,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
 	const { title, author, view } = req.body;
+	console.log({ file: req.file, filename: req.file.filename });
 	const NewBook = await Books({ title, author, view });
 	await NewBook.save()
 		.then(book => {

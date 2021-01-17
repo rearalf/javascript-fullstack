@@ -26,14 +26,10 @@ class BookServices {
 			});
 	}
 
-	async addNewBook({ title, author, view }) {
-		return await fetch('/api/books', {
+	async addNewBook(book) {
+		return await fetch(this.URI, {
 			method: 'POST',
-			mode: 'cors',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({ title, author, view }),
+			body: book,
 		})
 			.then(res => res.json())
 			.then(res => {

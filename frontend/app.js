@@ -8,12 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.getElementById('bookForm').addEventListener('submit', e => {
 	e.preventDefault();
-	// Inputs value
-	const title = e.target[0].value;
-	const author = e.target[1].value;
-	const view = e.target[2].value;
-	const cover = e.target[3].files[0];
-	ui.addNewBook({ title, author, view, cover });
+	const bookForm = document.getElementById('bookForm');
+	const formData = new FormData(bookForm);
+	ui.addNewBook(formData);
 });
 
 document.getElementById('ListBooks').addEventListener('click', e => {
