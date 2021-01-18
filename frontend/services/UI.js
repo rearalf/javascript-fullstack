@@ -6,20 +6,20 @@ class UI {
 		const { books } = await bookServices.getBooks();
 		const listBooks = document.getElementById('ListBooks');
 		listBooks.innerHTML = '';
-		books.forEach(book => {
+		books.forEach(({ image, title, author, view, _id }) => {
 			const div = document.createElement('div');
 			div.className = 'card mb-2';
 			div.innerHTML = `
 			<div class="card-content-img">
-				<img src="https://s3.amazonaws.com/virginia.webrand.com/virginia/344/LEqKdMKtOj8/c9e74d28a1a2e698f62446b8e5345254.jpg?1590394814"
+				<img src="${image}"
 					class="card-img" alt="imagen">
 				<span class="card-time">1 month ago</span>
 			</div>
 			<div class="card-body">
-				<h4 class="card-title">Title: ${book.title}</h4>
-				<p class="card-author">Autor: ${book.author}</p>
-				<p class="card-opinion">Opinión: ${book.view}</p>
-				<button class="btn" id="${book._id}">X</button>
+				<h4 class="card-title">Title: ${title}</h4>
+				<p class="card-author">Autor: ${author}</p>
+				<p class="card-opinion">Opinión: ${view}</p>
+				<button class="btn" id="${_id}">X</button>
 			</div>
 		`;
 			listBooks.appendChild(div);
