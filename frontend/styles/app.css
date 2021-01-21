@@ -111,7 +111,8 @@ main.container {
 
 .card-content-img {
 	position: relative;
-	width: 175px;
+	min-width: 133px;
+	max-width: 500px;
 }
 
 .card-img {
@@ -136,6 +137,7 @@ main.container {
 
 .card-body {
 	margin-left: 1rem;
+	padding: 2rem 0;
 }
 
 .card .btn {
@@ -144,7 +146,7 @@ main.container {
 	color: var(--color-text-second);
 	position: absolute;
 	bottom: 5px;
-	right: 15px;
+	right: 10px;
 }
 
 .card .btn:hover {
@@ -156,7 +158,9 @@ main.container {
 .card-opinion {
 	color: var(--color-text-primary);
 	font-weight: 700;
+	padding: 0 20px 0 0;
 }
+
 .card-title span,
 .card-author span,
 .card-opinion span {
@@ -199,9 +203,16 @@ main.container {
 
 .form .contentImg {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	gap: 20px;
 	align-items: center;
+	flex-direction: column;
+}
+
+@media screen and (min-width: 500px) {
+	.form .contentImg {
+		flex-direction: row;
+	}
 }
 
 .form-control-file {
@@ -223,6 +234,9 @@ label[for="inputImgForm"] {
 	cursor: pointer;
 	padding: 15px 40px !important;
 	text-transform: uppercase;
-	width: fit-content;
+	width: 240px;
 	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
