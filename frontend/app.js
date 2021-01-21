@@ -23,6 +23,8 @@ document.getElementById('ListBooks').addEventListener('click', e => {
 
 document.querySelector('#inputImgForm').addEventListener('change', e => {
 	const imgForm = document.getElementById('imgForm');
+	const name = e.target.files[0].name;
+	document.getElementById('labelImgForm').innerHTML = name;
 	const curFiles = e.target.files;
 	for (const file of curFiles) {
 		if (validFileType(file)) {

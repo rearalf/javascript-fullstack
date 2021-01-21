@@ -1,46 +1,13 @@
 :root {
-	--color-text-primary: #24292e;
-	--color-text-secondary: #586069;
-	--color-text-tertiary: #6a737d;
-	--color-text-placeholder: #6a737d;
-	--color-text-disabled: #6a737d;
-	--color-text-white: #fff;
-	--color-text-link: #0366d6;
-	--color-text-danger: #bd2c00;
-	--color-text-danger: #bd2c00;
-
-	--color-bg-primary: #fff;
-	--color-bg-secondary: #fafbfc;
-	--color-bg-tertiary: #f6f8fa;
-	--color-bg-info: #f1f8ff;
-	--color-bg-tertiary: #f6f8fa;
-
-	--color-header-bg: #24292e;
-	--color-header-text: #ffffff;
-
-	--color-shadow-small: 0 1px 0 rgba(27, 31, 35, 0.04);
-	--color-shadow-medium: 0 3px 6px rgba(149, 157, 165, 0.15);
-	--color-shadow-large: 0 8px 24px rgba(149, 157, 165, 0.2);
-	--color-shadow-extra-large: 0 12px 48px rgba(149, 157, 165, 0.3);
-	--color-shadow-highlight: inset 0 1px 0 hsla(0, 0%, 100%, 0.25);
-	--color-shadow-inset: inset 0 1px 0 rgba(225, 228, 232, 0.2);
-
-	--color-border-primary: #e1e4e8;
-	--color-btn-text: #24292e;
-	--color-btn-bg: #fafbfc;
-	--color-btn-bg-danger: #bd2c00;
-	--color-btn-border: rgba(27, 31, 35, 0.15);
-	--color-btn-shadow: 0 1px 0 rgba(27, 31, 35, 0.04);
-	--color-btn-hover-bg: #f3f4f6;
-	--color-btn-hover-border: rgba(27, 31, 35, 0.15);
-	--color-btn-selected-bg: #edeff2;
-	--color-btn-focus-bg: #fafbfc;
-	--color-btn-focus-border: rgba(27, 31, 35, 0.15);
-	--color-btn-focus-shadow: 0 0 0 3px rgba(3, 102, 214, 0.3);
-	--color-btn-shadow-active: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
-	--color-btn-shadow-input-focus: 0 0 0 0.2em rgba(3, 102, 214, 0.3);
-
-	--border-radius: .5rem;
+	--color-bg-primary: #f7f7fb;
+	--color-bg-second: #21243d;
+	--color-bg-third: #ffffff;
+	--color-bg-fourth: #00aeff;
+	--color-text-primary: #00aeff;
+	--color-text-second: #ffffff;
+	--color-text-third: #21243d;
+	--color-shadow-down: #00000080;
+	--border-radius: 8px;
 }
 
 *,
@@ -51,6 +18,10 @@
 
 a {
 	color: inherit;
+}
+
+ul {
+	margin: 0;
 }
 
 body {
@@ -82,10 +53,11 @@ body {
 
 .navbar {
 	width: 100%;
-	background-color: var(--color-header-bg);
-	color: var(--color-header-text);
-	box-shadow: 0 0 15px 0 var(--background-second);
+	background-color: var(--color-bg-third);
+	color: var(--color-text-primary);
+	box-shadow: 0 0 15px 0 var(--color-shadow-down);
 }
+
 .navbar a {
 	text-decoration: none;
 }
@@ -94,6 +66,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	padding: 1rem 0;
 }
 
 .navbar-brand {
@@ -123,15 +96,17 @@ main.container {
 @media screen and (min-width: 772px) {
 	main.container {
 		grid-template-areas: "cards form";
+		grid-template-columns: 1fr 1fr;
 	}
 }
 
 .form,
 .card {
-	background-color: var(--color-bg-info);
+	background-color: var(--color-bg-second);
 	display: flex;
 	border-radius: var(--border-radius);
-	box-shadow: var(--color-shadow-medium);
+	box-shadow: var(--color-shadow-down);
+	color: var(--color-bg-primary);
 }
 
 .card-content-img {
@@ -165,8 +140,8 @@ main.container {
 
 .card .btn {
 	border-radius: .2rem;
-	background-color: var(--color-btn-bg-danger);
-	color: var(--color-text-white);
+	background-color: #ce181e;
+	color: var(--color-text-second);
 	position: absolute;
 	bottom: 5px;
 	right: 15px;
@@ -176,27 +151,38 @@ main.container {
 	opacity: .8;
 }
 
+.card-title,
+.card-author,
+.card-opinion {
+	color: var(--color-text-primary);
+	font-weight: 700;
+}
+.card-title span,
+.card-author span,
+.card-opinion span {
+	color: var(--color-text-second);
+	font-weight: 500;
+}
+
 .form {
 	flex-direction: column;
 	padding: 1rem 1.5rem;
 }
 
 .form .btn {
-	border: 1px solid var(--color-btn-border);
-	background-color: var(--color-btn-bg);
-	color: var(--color-text-link);
+	background: #5468ff;
+	color: var(--color-bg-primary);
 }
 
 .form .btn:hover {
-	background-color: var(--color-btn-hover-bg);
+	opacity: .8;
 }
 
 .form-control {
 	width: 100%;
-	border: 1px solid var(--color-btn-border);
 	padding: .5rem 1rem;
 	border-radius: var(--border-radius);
-	color: var(--color-text-primary);
+	color: var(--color-text-third);
 	outline: none;
 }
 
@@ -208,11 +194,35 @@ main.container {
 .form .imgForm {
 	width: 125px;
 	height: 175px;
-	margin: 0 30% 1em;
 	border-radius: var(--border-radius);
 }
 
-.custom-file input[type="file"] {
-	background-color: var(--color-btn-bg);
+.form .contentImg {
+	display: flex;
+	justify-content: space-around;
+	gap: 20px;
+	align-items: center;
+}
+
+.form-control-file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+label[for="inputImgForm"] {
+	font-size: 14px;
+	font-weight: 600;
+	color: #fff;
+	background-color: #106ba0;
+	display: inline-block;
+	transition: all .5s;
 	cursor: pointer;
+	padding: 15px 40px !important;
+	text-transform: uppercase;
+	width: fit-content;
+	text-align: center;
 }
